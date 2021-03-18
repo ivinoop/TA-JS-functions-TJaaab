@@ -98,7 +98,7 @@ function isLeapYear (yearValue) {
 function getFactorial (num) {
   let factorial = 1;
   if ((num == 0) || (num == 1)) {
-    return factorial
+    return factorial;
   } else {
     for(let i = num; i >= 1; i--) {
       factorial *= i;
