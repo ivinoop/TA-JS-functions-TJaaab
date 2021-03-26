@@ -8,11 +8,17 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge(dogAge, humanAge) {
-  let dogAgeHuman = dogAge * 7;
-  let humanAgeDog = humanAge / 7;
-  return (`The dog's age in human years is ${dogAgeHuman} and the age of human in dog years is ${humanAgeDog}`);
+// function calculateDogAge(dogAge, humanAge) {
+//   let dogAgeHuman = dogAge * 7;
+//   let humanAgeDog = humanAge / 7;
+//   return (`The dog's age in human years is ${dogAgeHuman} and the age of human in dog years is ${humanAgeDog}`);
+// }
+
+function calculateDogAge(dogAge, conversion =7) {
+  return dogAge * conversion;
 }
+
+console.log(calculateDogAge(10,5));
 
 /*
 2. 🎖Write a function named calculateMoviesToWatch that:
@@ -79,17 +85,19 @@ pow(-31, 2); // "The number below 1 is not allowed"
 and return sum or product of 1,…,n. If user enters any other value than `sum` or `product` alert `Not a valid Input`.
 */
 
-function sumOrProductOfN(n, SumOrProduct) {
-  let sumOfN = 1;
-  if (SumOrProduct == 'sum') {
-      sumOfN = (n * (n+1) / 2);
-      return `Sum is ${sumOfN}`;
-  } else if (SumOrProduct == `product`) {
-    let prodOfN = 1;
+function sumOrProductOfN(n, operation) {
+  if (operation == "sum") {
+      let sum =0;
+      for (let i = 1; i <= n; i++) {
+        sum += i;
+      }
+      return `Sum is ${sum}`;
+  } else if (operation == "product") {
+    let product = 1;
     for (let i = 1; i <= n; i++) {
-      prodOfN *= i;
+      product *= i;
     } 
-    return `Product is ${prodOfN}`;
+    return `Product is ${product}`;
   } else {
     alert(`Not a valid input`);
   } 
@@ -104,22 +112,22 @@ sumOrProductOfN(4, 'hello'); // alert "Not a valid Input"
 */
 
 function sumOfN(n) {
-  let sumN = (n * (n+1) / 2);
-  return sumN;
+  let sum = (n * (n+1) / 2);
+  return sum;
 }
 
 /*
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 */
 
-function sumOfN(n) {
-  let sumN = 1;
-  for (let i = 1; i <= n; i++) {
-  if ((i % 5 == 0) && (i % 7 == 0)) {
-      sumN = (n * (n+1) / 2);
-      return sumN;
+function sumOfN5Or7(n) {
+  let sum = 0;
+  for (let i = 1; i<= n; i++) {
+    if (i % 5 == 0 || i % 7 == 0) {
+      sum += i;
     }
   }
+  return sum;
 }
 
 /*
