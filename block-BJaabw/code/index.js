@@ -12,7 +12,7 @@ minToSec(2) ➞ 120
 
 // - Write a Function Decleration for above problem
 function minToSec(minutes = 1) {
-  return seconds = minutes * 60;
+  return minutes * 60;
 }
 // - Execute the function with required parameter
 minToSec(120);
@@ -28,11 +28,7 @@ isInRange(1, 10, 19); // false
 
 // - Write a Function Decleration for above problem
 function isInRange(lower = 0, upper = 999, number = 1) {
-  if((number > lower) && (number < upper)) {
-    return true;
-  } else {
-    return false;
-  }
+  return number > lower && number < upper;
 }
 // - Execute the function with required parameter
 isInRange(10,40,15);
